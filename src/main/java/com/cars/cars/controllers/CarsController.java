@@ -1,5 +1,6 @@
 package com.cars.cars.controllers;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,11 +12,18 @@ import com.cars.cars.dto.Car;
 @RequestMapping("/cars")
 public class CarsController {
     @PostMapping
-    public void logCar(@RequestBody Car car){
+    public void registerCar(@RequestBody Car car){
         System.out.println(car.modelo());
         System.out.println(car.fabricante());
         System.out.println(car.dataFabricacao());
         System.out.println(car.valor());
         System.out.println(car.anoModelo());
+
+        // Save in database
+    }
+
+    @GetMapping
+    public void getCars(){
+        // return allCars
     }
 }
