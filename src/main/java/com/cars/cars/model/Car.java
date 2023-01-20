@@ -1,5 +1,7 @@
 package com.cars.cars.model;
 
+import java.util.Date;
+
 import com.cars.cars.dto.CarDTO;
 
 import jakarta.persistence.Column;
@@ -15,7 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Car {
 
-    public Car(CarDTO data){
+    public Car(CarDTO data) {
         this.modelo = data.modelo();
         this.fabricante = data.fabricante();
         this.dataFabricacao = data.dataFabricacao();
@@ -33,8 +35,8 @@ public class Car {
     @Column(length = 50, nullable = false)
     private String fabricante;
 
-    @Column(length = 10, nullable = false)
-    private String dataFabricacao;
+    @Column(nullable = false)
+    private Date dataFabricacao;
 
     @Column(length = 20, nullable = false)
     private double valor;
@@ -42,5 +44,3 @@ public class Car {
     @Column(length = 10, nullable = false)
     private int anoModelo;
 }
-
-
